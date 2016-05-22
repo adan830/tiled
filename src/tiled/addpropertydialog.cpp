@@ -47,6 +47,7 @@ AddPropertyDialog::AddPropertyDialog(QWidget *parent)
     mUi->typeBox->addItem(typeToName(QVariant::Bool));
     mUi->typeBox->addItem(typeToName(QVariant::Color));
     mUi->typeBox->addItem(typeToName(QVariant::Double));
+    mUi->typeBox->addItem(typeToName(filePathPropertyTypeId()));
     mUi->typeBox->addItem(typeToName(QVariant::Int));
     mUi->typeBox->addItem(stringType);
 
@@ -75,7 +76,7 @@ QString AddPropertyDialog::propertyName() const
     return mUi->name->text();
 }
 
-QVariant::Type AddPropertyDialog::propertyType() const
+int AddPropertyDialog::propertyType() const
 {
     QString typeText = mUi->typeBox->currentText();
     return nameToType(typeText);

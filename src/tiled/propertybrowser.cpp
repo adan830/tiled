@@ -551,7 +551,7 @@ void PropertyBrowser::addImageLayerProperties()
     addLayerProperties(groupProperty);
 
     QtVariantProperty *imageSourceProperty = createProperty(ImageSourceProperty,
-                                                            VariantPropertyManager::filePathTypeId(),
+                                                            filePathPropertyTypeId(),
                                                             tr("Image"), groupProperty);
 
     imageSourceProperty->setAttribute(QLatin1String("filter"),
@@ -570,7 +570,7 @@ void PropertyBrowser::addTilesetProperties()
     QtProperty *groupProperty = mGroupManager->addProperty(tr("Tileset"));
 
     if (tileset->isExternal()) {
-        auto property = createProperty(FileNameProperty, VariantPropertyManager::filePathTypeId(), tr("Filename"), groupProperty);
+        auto property = createProperty(FileNameProperty, filePathPropertyTypeId(), tr("Filename"), groupProperty);
 
         QString filter = QCoreApplication::translate("MainWindow", "All Files (*)");
         filter += QLatin1String(";;");
@@ -627,7 +627,7 @@ void PropertyBrowser::addTileProperties()
     const Tile *tile = static_cast<const Tile*>(mObject);
     if (!tile->imageSource().isEmpty()) {
         QtVariantProperty *imageSourceProperty = createProperty(ImageSourceProperty,
-                                                                VariantPropertyManager::filePathTypeId(),
+                                                                filePathPropertyTypeId(),
                                                                 tr("Image"), groupProperty);
 
         imageSourceProperty->setAttribute(QLatin1String("filter"),

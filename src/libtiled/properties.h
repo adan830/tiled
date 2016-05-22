@@ -98,8 +98,10 @@ private:
 };
 
 
-TILEDSHARED_EXPORT QString typeToName(QVariant::Type);
-TILEDSHARED_EXPORT QVariant::Type nameToType(const QString &name);
+TILEDSHARED_EXPORT int filePathPropertyTypeId();
+
+TILEDSHARED_EXPORT QString typeToName(int type);
+TILEDSHARED_EXPORT int nameToType(const QString &name);
 
 TILEDSHARED_EXPORT QVariant toExportValue(const QVariant &value);
 

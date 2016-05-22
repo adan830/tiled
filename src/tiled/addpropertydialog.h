@@ -38,7 +38,7 @@ public:
     ~AddPropertyDialog();
 
     QString propertyName() const;
-    QVariant::Type propertyType() const;
+    int propertyType() const;
 
 private slots:
     void nameChanged(const QString &text);

@@ -141,7 +141,7 @@ Properties VariantToMapConverter::toProperties(const QVariant &propertiesVariant
     QVariantMap::const_iterator it = propertiesMap.constBegin();
     QVariantMap::const_iterator it_end = propertiesMap.constEnd();
     for (; it != it_end; ++it) {
-        QVariant::Type type = nameToType(propertyTypesMap.value(it.key()).toString());
+        int type = nameToType(propertyTypesMap.value(it.key()).toString());
         if (type == QVariant::Invalid)
             type = QVariant::String;
 

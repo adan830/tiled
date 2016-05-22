@@ -945,7 +945,7 @@ void MapReaderPrivate::readProperty(Properties *properties)
     QVariant variant(propertyValue);
 
     if (!propertyType.isEmpty()) {
-        QVariant::Type type = nameToType(propertyType);
+        int type = nameToType(propertyType);
         if (type != QVariant::Invalid)
             variant.convert(nameToType(propertyType));
     }

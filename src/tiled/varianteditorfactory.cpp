@@ -99,7 +99,7 @@ QWidget *VariantEditorFactory::createEditor(QtVariantPropertyManager *manager,
 {
     const int type = manager->propertyType(property);
 
-    if (type == VariantPropertyManager::filePathTypeId()) {
+    if (type == filePathPropertyTypeId()) {
         FileEdit *editor = new FileEdit(parent);
         editor->setFilePath(manager->value(property).toString());
         editor->setFilter(manager->attributeValue(property, QLatin1String("filter")).toString());
